@@ -1,10 +1,13 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
 
 export const GoalItem = (props) => {
   return (
-    <View style={styles.goalItem}>
-      <Text style={styles.goalText}>{props.text}</Text>
-    </View>
+    // To make  a Component pres able in react native we use Pressabel Component as wrapper
+    <Pressable onPress={props.onDeleteHandler.bind(this, props.id)}>
+      <View style={styles.goalItem}>
+        <Text style={styles.goalText}>{props.text}</Text>
+      </View>
+    </Pressable>
   );
 };
 
